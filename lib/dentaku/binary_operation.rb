@@ -11,12 +11,12 @@ module Dentaku
     def add;      [:numeric, left + right];  end
     def subtract; [:numeric, left - right];  end
     def multiply; [:numeric, left * right];  end
-
-    def divide
-      quotient, remainder = left.divmod(right)
-      return [:numeric, quotient] if remainder == 0
-      [:numeric, BigDecimal.new(left.to_s) / BigDecimal.new(right.to_s)]
-    end
+    def divide;   [:numeric, left / right]; end
+    # def divide
+    #   quotient, remainder = left.divmod(right)
+    #   return [:numeric, quotient] if remainder == 0
+    #   [:numeric, BigDecimal.new(left.to_s) / BigDecimal.new(right.to_s)]
+    # end
 
     def mod;      [:numeric, left % right]; end
 

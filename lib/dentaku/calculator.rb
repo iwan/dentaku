@@ -5,7 +5,7 @@ require 'dentaku/token'
 
 module Dentaku
   class Calculator
-    attr_reader :result
+    attr_reader :result, :memory
 
     def initialize
       clear
