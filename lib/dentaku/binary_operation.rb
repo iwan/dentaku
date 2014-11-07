@@ -29,5 +29,9 @@ module Dentaku
 
     def and;      [:logical, left && right]; end
     def or;       [:logical, left || right]; end
+
+    def if_zero_then
+      [:numeric, left if_zero_then right]
+    end
   end
 end
