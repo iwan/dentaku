@@ -34,7 +34,15 @@ c.store(b: t2)
 c.store(e: 5)
 
 
-puts c.evaluate!('a').inspect
+# puts c.evaluate!('a+b').inspect
+partial = c.evaluate!('a+b')
+puts partial.inspect
+puts "------------"
+c.store(x: partial)
+c.bind("f" => t1)
+puts c.evaluate!('F').sum
+puts c.evaluate!('a').sum
+
 
 # puts c.evaluate('a-b').inspect
 # puts c.evaluate('a+b').inspect
