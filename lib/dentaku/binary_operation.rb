@@ -31,7 +31,8 @@ module Dentaku
     def or;       [:logical, left || right]; end
 
     def if_zero_then
-      [:numeric, left.if_zero_then right]
+      res = left.if_zero_then(right)
+      [:numeric, res]
     end
   end
 end
